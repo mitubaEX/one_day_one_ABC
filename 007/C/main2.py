@@ -5,9 +5,7 @@ sys.setrecursionlimit(10000)
 # define
 dx = [0, -1, 0, 1]
 dy = [1, 0, -1, 0]
-ans_count = sys.maxsize
-
-height, width = map(int, input().split())
+ans_count = sys.maxsize height, width = map(int, input().split())
 start_y, start_x = map(int, input().split())
 goal_y, goal_x = map(int, input().split())
 
