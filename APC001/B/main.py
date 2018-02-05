@@ -3,10 +3,20 @@
 # ijを選択する
 
 n = int(input())
-a = map(int, input().split())
-b = map(int, input().split())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
 
-# 差分
-sub = filter(lambda x: x != 0, [ a - b for a, b in zip(a, b) ])
+a_list = []
+b_list = []
 
-[ print(n) for n in sub]
+for i, j in zip(a, b):
+    if i > j:
+        b_list.append(i - j)
+    elif i < j:
+        a_list.append((j - i) // 2)
+
+if sum(b_list) >= sum(a_list):
+    print('No')
+else:
+    print('Yes')
+
