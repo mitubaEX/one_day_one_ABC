@@ -1,24 +1,14 @@
-# 2 5 8
-# 2 4 6 8
-
-p1 = [2, 4, 6, 8]
-p2 = [2, 5, 8]
-
 int(input())
-a = map(int, input().split(" "))
-count = 0
-for i in a:
-    flag = False
-    j = 0
-    before_num = 0
-    for j in p1:
-        if j >= i:
-            flag = True
-            break
-        before_num = j
-
-    if flag:
-        count += i - before_num
-    else:
-        count += j - i
-
+cost = 0
+for i in map(int, input().split()):
+    if i == 2:
+        cost += 1
+    elif i == 4:
+        cost += 1
+    elif i == 5:
+        cost += 2
+    elif i == 6:
+        cost += 3
+    elif i == 8:
+        cost += 1
+print(cost)
