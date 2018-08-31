@@ -1,6 +1,8 @@
 #include<stdio.h>
+#include<string.h>
+
 int dp[301][301];
-int w[301] = {};
+char w[301] = {};
 
 int abs(int num) {
   if(num <= -1) {
@@ -25,7 +27,10 @@ int rec(int l,int r){
 
     int res = 0;
     //パターン1.
-    if(abs(w[l] - w[r - 1]) <= 1 && rec(l + 1,r - 1) == r - l - 2)
+    // printf("%c %c\n", w[l], w[r - 1]);
+    // printf("%d\n", strcmp(&w[l], &w[r - 1]));
+    // printf("%d\n", w[l] == w[r - 1]);
+    if(w[l] == w[r - 1] && rec(l + 1,r - 1) == r - l - 2)
     {
         //[l , r)がはじき出せるので
         res = r - l;
@@ -49,8 +54,15 @@ int main(void) {
     }
 
     for (int i = 0; i < n; i++) {
-      scanf("%d", &w[i]);
+      scanf("%s", &w[i]);
+      // printf("%c\n", w[i]);
     }
+
+    for (int i = 0; i < n; i++) {
+      printf("%c\n", w[i]);
+    }
+
+    // printf("\n");
 
     for (int i = 0; i < n + 1; i++) {
       for (int j = 0; j < n + 1; j++) {
