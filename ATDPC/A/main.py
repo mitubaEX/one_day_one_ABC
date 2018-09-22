@@ -20,4 +20,11 @@ for i in range(1, n + 1):
 
 # print(dp)
 
-print(len(list(filter(lambda x: x == True, dp[n]))))
+s = 0
+for index, i in enumerate(dp[n]):
+    if i:
+        print(index)
+        s += index
+print(s)
+
+# print(sum(list(filter(lambda x: x == True, dp[n]))))
