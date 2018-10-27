@@ -1,3 +1,6 @@
 *.class
 *.hi
 *.o
+**/a.out
+**/test
+**/run
